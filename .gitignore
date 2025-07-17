@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.log
+*.sqlite3
+
+# Virtual env
+venv/
+.env
+.env.*
+
+# VS Code
+.vscode/
+
+# Docker
+*.pid
+*.seed
+*.tar
+*.bak
+*.swp
+*.swo
+docker-compose.override.yml
+
+# Pytest
+.cache/
+.coverage
+htmlcov/
+nosetests.xml
+coverage.xml
+*.cover
+.pytest_cache/
+
+# Mypy
+.mypy_cache/
+
+# FastAPI Uvicorn reload artifacts
+*.reload
+
+# macOS
+.DS_Store
+
+# Linux
+*.swp
