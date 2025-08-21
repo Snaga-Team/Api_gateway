@@ -1,10 +1,18 @@
-version: '3.9'
-
+version: "3.9"
 services:
   gateway:
     build: .
     container_name: api_gateway
-    volumes:
-      - ./app:/app/app
+    env_file: .env
     ports:
       - "8080:8000"
+    volumes:
+      - ./app:/app/app
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    environment:
+      WATCHFILES_FORCE_POLLING: "true"
+    command: >
+      uvicorn app.main:app
+      --host 0.0.0.0 --port 8000
+      --reload --reload-dir /app/app
